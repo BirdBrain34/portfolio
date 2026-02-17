@@ -15,14 +15,15 @@ const { selectedItem } = Astro.props;
     <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <img
-          src="/assets/sam.jpg"
+          src="/assets/Atendido.png"
           loading="eager"
-          alt="Profile picture"
+          alt="Skills and Achievements icons"
           class="niv-image"
+          style="border-radius: 0; object-fit: contain; background: transparent;"
         />
         <div>
-          <div class="label-white">Sam Bernstein</div>
-          <div class="label-gray">Software Engineer</div>
+          <div class="label-white">Lance Atendido</div>
+          <div class="label-gray">IT Student | Backend Developer</div>
         </div>
       </div>
     </a>
@@ -34,59 +35,41 @@ const { selectedItem } = Astro.props;
           selectedItem === 'home' ? 'w--current' : ''
         }`}
       >
-        <img
-          src="/assets/home.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Home</div>
+        <img src="/assets/home.svg" loading="eager" alt="" class="nav-link-image" />
+        <div>About Me</div>
       </a>
+
       <a
-        href="/software-development"
+        href="/skills"
         class={`nav-link-container w-inline-block ${
-          selectedItem === 'software-development' ? 'w--current' : ''
+          selectedItem === 'skills' ? 'w--current' : ''
         }`}
-        aria-current={
-          selectedItem === 'software-development' ? 'page' : undefined
-        }
+        aria-current={selectedItem === 'skills' ? 'page' : undefined}
       >
-        <img
-          src="/assets/code.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Software development</div>
+        <img src="/assets/skills-icon.png" loading="eager" alt="" class="nav-link-image" />
+        <div>Skills</div>
       </a>
+
       <a
-        href="/devops"
+        href="/achievements"
         class={`nav-link-container w-inline-block ${
-          selectedItem === 'devops' ? 'w--current' : ''
+          selectedItem === 'achievements' ? 'w--current' : ''
         }`}
       >
-        <img
-          src="/assets/dns.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>DevOps</div>
+        <img src="/assets/achievements-icon.png" loading="eager" alt="" class="nav-link-image" />
+        <div>Achievements</div>
       </a>
+
       <a
         href="/personal-projects"
         class={`nav-link-container w-inline-block ${
           selectedItem === 'personal-projects' ? 'w--current' : ''
         }`}
       >
-        <img
-          src="/assets/favorite.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Personal projects</div>
+        <img src="/assets/favorite.svg" loading="eager" alt="" class="nav-link-image" />
+        <div>Projects</div>
       </a>
+
     </nav>
 
     <div
@@ -96,18 +79,13 @@ const { selectedItem } = Astro.props;
       role="button"
       tabindex="0"
     >
-      <img
-        src="/assets/menu.svg"
-        loading="eager"
-        alt=""
-        class="navbar-icon"
-      />
+      <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
     </div>
   </div>
 
   <script>
     import { setupNav } from '../scripts/nav.js';
-    
+
     let cleanup;
     document.addEventListener('astro:page-load', () => {
       if (cleanup) cleanup();
