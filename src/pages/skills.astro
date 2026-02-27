@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!DOCTYPE html>
 <html>
@@ -12,8 +13,8 @@ import Sidebar from "../components/Sidebar.astro";
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block">
-              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
               <div>Back</div>
             </a>
           </div>
@@ -74,14 +75,12 @@ import Sidebar from "../components/Sidebar.astro";
                 <div class="single-chip">Visual Studio</div>
                 <div class="single-chip">VS Code</div>
                 <div class="single-chip">XAMPP</div>
-                <div class="single-chip">Supabase</div>
               </div>
             </section>
           </div>
         </div>
       </nav>
     </div>
-
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   </body>
 </html>

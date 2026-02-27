@@ -1,8 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-
 
 <!DOCTYPE html>
 <html>
@@ -22,10 +22,10 @@ import Sidebar from "../components/Sidebar.astro";
             <a href="mailto:lanceatendido34@gmail.com" class="button w-button">Contact</a>
           </main>
           <div class="projects-section">
-            <a href="/skills" class="projects-container">
+            <a href={`${base}/skills`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src="./assets/skills-icon.png" loading="lazy" alt="Skills" class="projects-category-image" />
+                  <img src={`${base}/assets/skills-icon.png`} loading="lazy" alt="Skills" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -51,10 +51,10 @@ import Sidebar from "../components/Sidebar.astro";
                 </div>
               </div>
             </a>
-            <a href="/achievements" class="projects-container">
+            <a href={`${base}/achievements`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container devops-img">
-                  <img src="./assets/achievements-icon.png" loading="lazy" alt="Achievements" class="projects-category-image" />
+                  <img src={`${base}/assets/achievements-icon.png`} loading="lazy" alt="Achievements" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -64,7 +64,7 @@ import Sidebar from "../components/Sidebar.astro";
                   <div class="chips-container chips-container-small-width">
                     <div class="single-chip small-chip">Hackathon 1st Place</div>
                     <div class="single-chip small-chip">Dean's Lister</div>
-                    <div class="single-chip small-chip">TOEIC</div>
+                    <div class="single-chip small-chip">TOEIC 805/990</div>
                     <div class="single-chip small-chip">CCNA</div>
                     <div class="single-chip small-chip">Ethical Hacking</div>
                     <div class="single-chip small-chip">CompTIA Tech+</div>

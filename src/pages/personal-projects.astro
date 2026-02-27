@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Project from '../components/Project.astro';
 import Sidebar from '../components/Sidebar.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const projects = [
   {
     title: "SapPIIre — Secured Autofill System",
@@ -12,7 +13,7 @@ const projects = [
       "Designed and structured a relational database for storing and managing user PII with proper security constraints",
       "Implemented QR-triggered PII transfer from the mobile app to a live web session"
     ],
-    tech: ["Dart", "Flutter", "HTML", "Supabase"]
+    tech: ["Dart", "Flutter", "HTML", "MySQL"]
   },
   {
     title: "CCIS House Attendance Tracker of 2024",
@@ -69,8 +70,8 @@ const projects = [
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block">
-              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
               <div>Back</div>
             </a>
           </div>
