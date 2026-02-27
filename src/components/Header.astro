@@ -1,11 +1,10 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import { base } from 'astro:config';
 interface HeaderProps {
   title: string;
 }
 const { title } = Astro.props as HeaderProps;
-const b = base ?? '';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <head>
@@ -15,7 +14,7 @@ const b = base ?? '';
   <meta content={title} property="og:title" />
   <meta content={title} property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href={`${b}/assets/styles.css`} rel="stylesheet" type="text/css" />
+  <link href={`${base}/assets/styles.css`} rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/" rel="preconnect" />
   <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous" />
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
@@ -26,6 +25,6 @@ const b = base ?? '';
       (n.className += t + "js"), ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch");
     })(window, document);
   </script>
-  <link href={`${b}/assets/Atendido.png`} rel="shortcut icon" type="image/x-icon" />
-  <link href={`${b}/assets/Atendido.png`} rel="apple-touch-icon" />
+  <link href={`${base}/assets/Atendido.png`} rel="shortcut icon" type="image/x-icon" />
+  <link href={`${base}/assets/Atendido.png`} rel="apple-touch-icon" />
 </head>

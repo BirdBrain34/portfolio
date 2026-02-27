@@ -1,7 +1,6 @@
 ---
-import { base } from 'astro:config';
 const { selectedItem } = Astro.props;
-const b = base ?? '';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <aside
@@ -14,10 +13,10 @@ const b = base ?? '';
   class="sidebar w-nav"
 >
   <div class="nav-content">
-    <a href={`${b}/`} class="w-nav-brand" aria-label="home">
+    <a href={`${base}/`} class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <img
-          src={`${b}/assets/Atendido.png`}
+          src={`${base}/assets/Atendido.png`}
           loading="eager"
           alt="Lance Atendido"
           class="niv-image"
@@ -32,35 +31,35 @@ const b = base ?? '';
 
     <nav role="navigation" class="w-nav-menu">
       <a
-        href={`${b}/`}
+        href={`${base}/`}
         class={`nav-link-container w-inline-block ${selectedItem === 'home' ? 'w--current' : ''}`}
       >
-        <img src={`${b}/assets/home.svg`} loading="eager" alt="" class="nav-link-image" />
+        <img src={`${base}/assets/home.svg`} loading="eager" alt="" class="nav-link-image" />
         <div>About Me</div>
       </a>
 
       <a
-        href={`${b}/skills`}
+        href={`${base}/skills`}
         class={`nav-link-container w-inline-block ${selectedItem === 'skills' ? 'w--current' : ''}`}
         aria-current={selectedItem === 'skills' ? 'page' : undefined}
       >
-        <img src={`${b}/assets/skills-icon.png`} loading="eager" alt="" class="nav-link-image" />
+        <img src={`${base}/assets/skills-icon.png`} loading="eager" alt="" class="nav-link-image" />
         <div>Skills</div>
       </a>
 
       <a
-        href={`${b}/achievements`}
+        href={`${base}/achievements`}
         class={`nav-link-container w-inline-block ${selectedItem === 'achievements' ? 'w--current' : ''}`}
       >
-        <img src={`${b}/assets/achievements-icon.png`} loading="eager" alt="" class="nav-link-image" />
+        <img src={`${base}/assets/achievements-icon.png`} loading="eager" alt="" class="nav-link-image" />
         <div>Achievements</div>
       </a>
 
       <a
-        href={`${b}/personal-projects`}
+        href={`${base}/personal-projects`}
         class={`nav-link-container w-inline-block ${selectedItem === 'personal-projects' ? 'w--current' : ''}`}
       >
-        <img src={`${b}/assets/favorite.svg`} loading="eager" alt="" class="nav-link-image" />
+        <img src={`${base}/assets/favorite.svg`} loading="eager" alt="" class="nav-link-image" />
         <div>Personal Projects</div>
       </a>
     </nav>
@@ -72,7 +71,7 @@ const b = base ?? '';
       role="button"
       tabindex="0"
     >
-      <img src={`${b}/assets/menu.svg`} loading="eager" alt="" class="navbar-icon" />
+      <img src={`${base}/assets/menu.svg`} loading="eager" alt="" class="navbar-icon" />
     </div>
   </div>
 
